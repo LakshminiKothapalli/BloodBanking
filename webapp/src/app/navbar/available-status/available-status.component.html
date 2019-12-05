@@ -1,0 +1,46 @@
+
+<div class="row">
+    <div class="col-xl-11 mt-5 ml-5 mr-5 mx-auto">
+        <h2>Blood Availability Status</h2>
+        <div *ngIf="this.bloodBankService.isBloodAvailable">
+            <div class="alert alert-success">
+                Blood is Available!!!
+            </div>
+        
+        <div class="row">
+            <div class="col-xl-11 mt-5 ml-5 mr-5 mx-auto">
+                <h2>Available Donors</h2>
+                <table class="table">
+                    <tr>
+                        <th class="ml-5">First Name</th>
+                        <th class="ml-5">Last Name</th>
+                        <th class="ml-5">Contact</th>
+                        <th class="ml-5">Blood Group</th>
+                        <th class="ml-5">Area</th>
+                        <th class="ml-5">Pincode</th>
+                    </tr>
+                    <tr *ngFor="let user of this.bloodBankService.availableUsers">
+                        <td>{{user.firstname}}</td>
+                        <td>{{user.lastname}}</td>
+                        <td>{{user.contactNo}}</td>
+                        <td>{{user.bloodgroup}}</td>
+                        <td>{{user.area}}</td>
+                        <td>{{user.pincode}}</td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+        </div>
+    
+    
+    <div *ngIf="!this.bloodBankService.isBloodAvailable">
+        <div class="alert alert-danger">
+            Requested Blood is not found in that Particular Location
+        </div>
+        <div>
+            Do you want to post your requirement in Home Page ??
+            <a routerLink="/requestblood">Post your Requirement</a>
+        </div>
+    </div>
+</div>
+</div>

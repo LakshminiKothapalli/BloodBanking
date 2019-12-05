@@ -1,0 +1,51 @@
+<body class="back-image-login">
+
+
+<div class="row">
+    <div class="col-xs-11 mt-5 ml-5 mr-5 mb-5 mx-auto">
+        <div class="card-transparent card-back mt-10 mb-10">
+            <div class="card-block special-card mb-5 mt-5">
+            <h2 class="mt-5 ml-5 text-light">Login</h2>
+
+           
+            <div class="alert alert-danger ml-5 mr-5 text-light"
+                *ngIf="username.touched && password.touched && !this.authService.validCredentials">Invalid Username /
+                Password</div>
+            <form [formGroup]="loginForm" (submit)="this.authService.authenticateUser(loginForm.value)">
+                <div class="row mt-5 ml-5 mr-5">
+                    <div class="col-12 text-light">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" placeholder="Enter Username" formControlName="username"
+                            id="username" required>
+                        <div class="text-danger"
+                            *ngIf="username.touched && username.invalid && username.errors.required">Username is
+                            required</div>
+                    </div>
+                </div>
+                <div class="row ml-5 mr-5">
+                    <div class="col-12 mt-5 text-light">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password"
+                            formControlName="password" id="password" required>
+                        <div class="text-danger"
+                            *ngIf="password.touched && password.invalid && password.errors.required">Password is
+                            required</div>
+                    </div>
+                </div>
+                <div class="row mt-5 ml-5 mr-5 mb-5">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-dark">Login</button>
+                    </div>
+                    <div class="col text-light">
+                        <div>
+                            New Here? <a (click)="toSignup()">Signup</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+       </div>
+       
+    </div>
+</div>
+</div>
+</body>

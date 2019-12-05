@@ -1,0 +1,77 @@
+<body class="back-image-login">
+<div class="row">
+    <div class="col-xs-11 mt-5 ml-5 mr-5 mb-5 mx-auto">
+            <div class="card-transparent card-back mt-10 mb-5 mb-10">
+                    <div class="card-block special-card mb-5 mt-5">
+            <h1 class="mt-5 ml-5 text-align">FeedBack</h1>
+            <div class="col-xs-11 mx-auto alert alert-success" *ngIf="this.posted">
+                Feedback posted successfully!!
+            </div>
+            <form [formGroup]="ExperienceSharingForm" (submit)="this.onClick(ExperienceSharingForm.value)">
+
+                <div class="row ml-5 mr-5 mb-5 mt-5">
+
+                    <label for="state">State</label>
+                    <select class="form-control" id="state" formControlName="state" (blur)="selectState($event)"
+                        (change)="selectState($event)" name="state">
+                        <option hidden></option>
+                        <option value="">Choose your State</option>
+                        <option *ngFor="let st of State" [ngValue]="st">{{st}}</option>
+                    </select>
+                    <div class="text-danger" *ngIf="state.invalid && state.errors.required && state.touched">State is
+                        required</div>
+
+                </div>
+                <div class="row ml-5 mr-5 mb-5 mt-5">
+
+                    <label for="hospitalArea">Area</label>
+                    <select class="form-control" placeholder="Choose hospitalArea" id="hospitalArea"
+                        formControlName="hospitalArea" (blur)="selectArea($event)" (change)="selectArea($event)"
+                        name="hospitalArea">
+
+                        <option value="">Choose your Area</option>
+                        <option *ngFor="let ar of Area" [ngValue]="ar">{{ar}}</option>
+                    </select>
+                    <div class="text-danger"
+                        *ngIf="hospitalArea.invalid && hospitalArea.errors.required && hospitalArea.touched">Area is
+                        required</div>
+
+                </div>
+                
+                <div class="row ml-5 mr-5 mb-5 mt-5">
+
+                        <label for="hospitalName">HospitalName</label>
+                        <select class="form-control" placeholder="Choose hospitalName" id="hospitalName"
+                            formControlName="hospitalName" (blur)="selectHospital($event)" (change)="selectHospital($event)" name="hospitalName">
+                            <option hidden></option>
+                            <option value="">Choose your Hospital</option>
+                            <option *ngFor="let hosp of Hospital" [ngValue]="hosp">{{hosp}}</option>
+                        </select>
+                        <div class="text-danger"
+                            *ngIf="hospitalName.invalid && hospitalName.errors.required && hospitalName.touched">
+                            HospitalName is required</div>
+    
+                    </div>
+
+                <div class="row ml-5 mr-5 mb-5 mt-5">
+
+                    <label for="feedBack">Feedback</label>
+                    <input type="text" class="form-control" placeholder="Enter feedBack" formControlName="feedBack" id="feedBack">
+                    <div class="text-danger" *ngIf="feedBack.touched && feedBack.errors?.required">Feedback is required</div>
+
+                </div>
+
+
+
+                <div class="row mt-5 ml-5 mr-5 mb-5 mb-5 mt-5">
+                    <div class="col-12">
+                        <button type="submit" class="btn feedback-button"
+                            [disabled]="!FeedBackForm.valid">Submit</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

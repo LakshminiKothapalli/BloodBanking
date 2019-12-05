@@ -1,0 +1,192 @@
+/* .nav-bottom {
+	left: 0;
+	bottom: 0;
+    width: 100%;
+    right: 0;
+    
+	background-color:darkred;
+    color: black;
+    position: fixed;
+}
+.nav-header {
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: darkred;
+    color: white;
+    
+  
+}
+.nav-header-1 {
+    left: 0;
+    bottom: 0;
+    right:0;
+    width: 100%;
+    background-color:black;
+    color: white;
+    text-align: center;
+    
+}
+
+.image-size {
+    height:50px;
+    width:50px;
+}
+
+.image-size-1 {
+    height:400px;
+    width:500px;
+}
+
+
+.text-size {
+    font-size: 20px;
+}
+
+.text-style {
+   
+   font-size:25px;
+   color:rgba(221, 24, 24, 0.767);
+   font-family: Copperplate, "Copperplate Gothic Light", serif; 
+}
+.text-style-1 {
+    font-style: oblique;
+    font-size:18px;
+    color:rgba(221, 24, 24, 0.767);
+ }
+
+ .text-style-2 {
+    font-style: oblique;
+ }
+ .navbar-new-top{
+    background: #fff;
+}
+.navbar-brand{
+    font-weight: 600;
+}
+
+.navbar-new-top ul{
+    margin-right: 9%;
+}
+.navbar-new-top ul li{
+    margin-right: 8%;
+}
+.navbar-new-bottom{
+    background-color: #f7f7f7;
+    box-shadow: 0 5px 6px -2px rgba(0,0,0,.3);
+    border-top: 1px solid #e0e0e0;
+    margin-top: 4%;
+    height: 40px;
+}
+.navbar-new-bottom ul li{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.navbar-nav .nav-item a {
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 1s ease;
+}
+.navbar-nav .nav-item a:hover{
+    color: #0062cc;
+}
+.dropdown-menu.show{
+    background: #f8f9fa;
+    border-radius: 0;
+}
+
+#text-red {
+    color:red;
+}
+
+
+.back-image-bottom {
+    background-image:
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfzsZUbQ_S2DxF72jXtLTFC_8ENGo6akyBNHi0V_A-xcyZZa2p");
+    height: 100%;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+ }
+
+ .font {
+     font-size: 30px;
+ } */
+
+
+
+.top_navbar {
+	color: #FFFFFF;
+	background-color: red;
+	width: 100%;
+	height: 5%;
+	font-size: 25px;
+}
+
+.bottom_navbar {
+	bottom: 0;
+	position: fixed;
+	background-color:red;
+	width: 100%;
+	height: 5%;
+	font-size: 18px;
+	left: 0;
+	color: #FFFFFF;
+	vertical-align: middle;
+}
+
+.image-size {
+    height:62px;
+    width:62px;
+}
+
+.nav-header {
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    
+  
+}
+
+h2 {
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+}
+
+h4 {
+	font-weight: normal;
+}
+
+.material-icons {
+	vertical-align: middle;
+}
+
+.menu {
+	color: #FFFFFF;
+	font-size: 15px;
+}
+
+.btn-orange {
+	background-color: #FF6347;
+	color: #FFFFFF;
+}
+
+.navbar-new-bottom{
+    background-color: #f7f7f7;
+    box-shadow: 0 5px 6px -2px rgba(0,0,0,.3);
+    border-top: 1px solid #e0e0e0;
+    margin-top: 4%;
+    height: 40px;
+}
+
+.navbar-new-top{
+    background: #fff;
+}

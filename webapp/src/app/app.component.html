@@ -1,0 +1,72 @@
+<header>
+  <div class="container-fluid">
+    <div class="row mb-5">
+
+        <nav class="navbar fixed-top col-12 navbar navbar-expand-md navbar-dark nav-header">
+          <img  class="image-size" src="https://i.pinimg.com/736x/3e/04/a2/3e04a2d4850cd7d4ab562208cfdb706e.jpg" alt="" />
+          <h3> <a class="nav-link menu" *ngIf="!loggedIn()" routerLink="home/">Blood Bank</a></h3>
+          <h3> <a class="nav-link menu" *ngIf="loggedIn()" routerLink="userpage/">Blood Bank</a></h3>
+
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#collapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link menu" *ngIf="!loggedIn()" routerLink="login/">Login</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link menu" *ngIf="!loggedIn()" routerLink="register/">Register</a>
+            </li>
+            <li class="nav-item menu active" *ngIf="loggedIn()">
+              <i class="material-icons other_icon">person </i> <span
+                class="menu">{{this.authService.loggedInUser}}</span>
+            </li>
+            <li class="nav-item active" *ngIf="loggedIn()" (click)="this.authService.logout()">
+              <a class="nav-link menu" routerLink="home/">Logout</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+    <div class=" row mb-5 pb-10">
+      <nav class="navbar fixed-top navbar-expand-md navbar-new-bottom" style="margin-top:80px">
+        <div class="navbar-collapse collapse " >
+          <ul class="navbar-nav w-100 justify-content-center mr-auto px-2">
+            <li class="nav-item">
+              <a class="nav-link" id="text-red" routerLink="aboutus">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="text-red" *ngIf="loggedIn()" routerLink="requestblood">Request Blood</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="text-red" *ngIf="loggedIn()" routerLink="availability">Blood Availability</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="text-red" *ngIf="loggedIn()" routerLink="blooddonation">Blood Donation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="text-red" routerLink="bloodtips">Blood Tips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="text-red" *ngIf="loggedIn()" routerLink="feedBack">Experience Sharing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="text-red" routerLink="contactus">Contact Us</a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+      </div>
+      </div>
+</header>
+<router-outlet></router-outlet>
+
+<nav class="navbar navbar-expand-sm navbar-dark text-light bottom_navbar">
+  Copyright 2019
+</nav>

@@ -1,0 +1,179 @@
+
+<body class="back-image-login">
+        <div class="row">
+                <div class="col-xs-11 mt-5 ml-5 mr-5 mb-5 mx-auto">
+                        <div class="card-transparent card-back mt-10 mb-5 mb-10">
+                                <div class="card-block special-card mb-5 mt-5">
+                        <h1 class="mt-5 ml-5 text-align text-light">Register</h1>
+                        <form [formGroup]="registerForm"  (submit)="this.OnClickRegister(registerForm.value)">
+                            <div class="row mt-5 ml-5 mr-5">
+                                <div class="alert-danger col-12 px-auto"
+                                    *ngIf="registerForm.get('username').hasError('userNameTaken')">
+                                    Username already exists
+                                </div>
+                            </div>
+                            <div class="row ml-5 mr-4">
+                                <div class="col-md-6 col-xs-12 text-light">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" placeholder="Enter Username" formControlName="username"
+                                        id="username">
+                                    <div class="text-danger"
+                                        *ngIf="username.invalid && username.errors.required && username.touched">Username is
+                                        required</div>
+                                </div>
+                            </div>
+                            <div class="row ml-5 mr-5">
+                                <div class="col-md-6 col-xs-12 mt-5 text-light">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter First Name"
+                                        formControlName="firstname" id="firstname">
+                                    <div class="text-danger"
+                                        *ngIf="firstname.invalid && firstname.errors.required && firstname.touched">First Name is
+                                        required</div>
+                                </div>
+                                <div class="col-md-6 col-xs-12  mt-5 text-light">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="lastname"
+                                        id="lastname">
+                                    <div class="text-danger"
+                                        *ngIf="lastname.invalid && lastname.errors.required && lastname.touched">Last Name is
+                                        required</div>
+                                </div>
+                            </div>
+                            <div class="row ml-5 mr-5">
+                                <div class="col-md-6 col-xs-12 mt-5 text-light">
+                                    <label for="age">Age</label>
+                                    <input type="number" class="form-control" placeholder="Enter age" formControlName="age"
+                                        id="age">
+                                    <div class="text-danger" *ngIf="age.invalid && age.errors.required && age.touched">Age is
+                                        required</div>
+                                </div>
+                                <div class="col-md-6 col-xs-12 mt-5 text-light">
+                                    <label for="gender">Gender</label>
+                                    <select class="form-control" id="gender" formControlName="gender" name="gender">
+                                        <option hidden></option>
+                                        <option value="">Choose your Gender</option>
+                                        <option *ngFor="let g of Gender" [ngValue]="g">{{g}}</option>
+                                    </select>
+                                    <div class="text-danger" *ngIf="gender.invalid && gender.errors.required && gender.touched">
+                                        Gender is required</div>
+                                </div>
+                            </div>
+                            <div class="row ml-5 mr-5">
+                                <div class="col-md-6 col-xs-12 mt-5 text-light">
+                                    <label for="contactNo">Contact Number</label>
+                                    <input type="text" class="form-control" placeholder="Enter Contact Number"
+                                        formControlName="contactNo" id="contactNo" pattern="^[6789]\d{9}$">
+                                    <div class="text-danger"
+                                        *ngIf="contactNo.invalid && contactNo.errors.required && contactNo.touched">Contact Number
+                                        is required</div>
+                                </div>
+                                <div class="text-light" *ngIf="contactNo.errors?.pattern">* Contact number should start
+                                    with digits 6,7,8,9 and should be of 10 characters</div>
+                            
+            
+                                <div class="col-md-6 col-xs-12 mt-5 text-light">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" placeholder="Enter Email" formControlName="email"
+                                        id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                    <div class="text-danger" *ngIf="email.invalid && email.errors.required && email.touched">Email
+                                        is required</div>
+                                
+                                <div class="text-light" *ngIf="email.errors?.pattern">* Email should contain @, . and characters</div>
+                            </div>
+                            </div>
+                        
+                            <div class="row ml-5 mr-5">
+                                <div class="col-md-6 col-xs-12 mt-5 text-light">
+                                    <label for="weight">Weight</label>
+                                    <input type="number" class="form-control" placeholder="Enter Weight" formControlName="weight"
+                                        id="weight">
+                                    <div class="text-danger" *ngIf="weight.invalid && weight.errors.required && weight.touched">
+                                        Weight is required</div>
+                                </div>
+                                <div class="col-md-6 col-xs-12 mt-5 text-light">
+                                    <label for="bloodgroup">BloodGroup</label>
+                                    <select class="form-control" id="bloodgroup" formControlName="bloodgroup" name="bloodgroup">
+                                        <option hidden></option>
+                                        <option value="">Choose your Blood Group</option>
+                                        <option *ngFor="let b of Bloodgroup" [ngValue]="b">{{b}}</option>
+                                    </select>
+                                    <div class="text-danger"
+                                        *ngIf="bloodgroup.invalid && bloodgroup.errors.required && bloodgroup.touched">BloodGroup is
+                                        required</div>
+                                </div>
+                            </div>
+                            <div class="row ml-5 mr-5">
+                                <div class="col-md-4 col-xs-12 mt-5 text-light">
+                                    <label for="state">State</label>
+                                    <select class="form-control" id="state" formControlName="state" name="state">
+                                        <option hidden></option>
+                                        <option value="">Select state</option>
+                                        <option *ngFor="let state of States" [ngValue]="state">{{state}}</option>
+                                    </select>
+                                    <div class="text-danger"
+                                        *ngIf="state.invalid && state.errors.required && state.touched">State is
+                                        required</div>
+                                </div>
+                                <div class="col-md-4 col-xs-12 mt-5 text-light">
+                                    <label for="area">Area</label>
+                                    <select class="form-control" id="area" formControlName="area" name="area">
+                                        <option hidden></option>
+                                        <option value="">Select Area</option>
+                                        <option *ngFor="let area of Areas" [ngValue]="area">{{area}}</option>
+                                    </select>
+                                    <div class="text-danger"
+                                        *ngIf="area.invalid && area.errors.required && area.touched">Area is
+                                        required</div>
+                                   
+                                </div>
+                                <div class="col-md-4 col-xs-12 mt-5 text-light">
+                                    <label for="pincode">Pincode</label>
+                                    <input type="text" class="form-control" placeholder="Enter Pincode"
+                                        formControlName="pincode" id="pincode" pattern="^[0-9]\d{5}$">
+                                    <div class="text-danger"
+                                        *ngIf="pincode.invalid && pincode.errors.required && pincode.touched">Pincode is
+                                        required</div>
+                                        <div class="text-light" *ngIf="pincode.errors?.pattern">* Pincode should be a number in
+                                            6
+                                            characters</div>
+                                    </div>
+            
+                                
+                            </div>
+                            <div class="row ml-5 mr-5">
+                                <div class="col-md-6 col-xs-12 mt-5 text-light">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" placeholder="Enter Password"
+                                        formControlName="password" id="password">
+                                    <div class="text-danger"
+                                        *ngIf="password.invalid && password.errors.required && password.touched">Password is
+                                        required</div>
+                                </div>
+                                <div class="col-md-6 col-xs-12 mt-5 text-light">
+                                    <label for="confirmPassword">Confirm Password</label>
+                                    <input type="password" class="form-control" placeholder="Enter Confirm Password"
+                                        formControlName="confirmPassword" id="confirmPassword">
+                                    <div class="text-danger"
+                                        *ngIf="confirmPassword.invalid && confirmPassword.errors.required && confirmPassword.touched">
+                                        Confirm the Password</div>
+                                    <div class="text-danger" *ngIf="registerForm.get('confirmPassword').hasError('nomatch')">Password
+                                        and Confirm Password do not match</div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-5 ml-5 mr-5 mb-5">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-dark"
+                                        [disabled]="!registerForm.valid">Register</button>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            </body>
+            
+            

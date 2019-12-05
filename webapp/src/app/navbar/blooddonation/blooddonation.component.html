@@ -1,0 +1,82 @@
+<body class="back-image-login">
+<div class="row">
+        <div class="col-xs-11 mt-5 ml-5 mr-5 mb-5 mx-auto">
+                <div class="card-transparent card-back mt-10 mb-5 mb-10">
+                        <div class="card-block special-card mb-5 mt-5">
+                <h1 class="mt-5 ml-5 text-align">Blood Donation</h1>
+                <form [formGroup]="Blooddonationform" (submit)="this.onClickDonate(Blooddonationform.value)">
+                    
+                    <div class="row ml-5 mr-5 mb-5 mt-5">
+                   
+                        <label for="">Username<a class="red-color">*</a></label>
+                        <input type="text" class="form-control" placeholder="Enter Username" formControlName="username" id="username" >
+                
+                        <div class="text-danger" *ngIf="username.invalid && username.errors.required && username.touched">Username is required</div>
+                    
+                    </div>
+                    <div class="row ml-5 mr-5 mb-5 mt-5">
+                        
+                            <label for="bloodgroup">BloodGroup</label> 
+                            <select class="form-control" id="bloodgroup" formControlName="bloodgroup" name="bloodgroup">
+                                <option hidden></option>
+                                <option value="">Choose your Blood Group</option>
+                        <option *ngFor="let b of Bloodgroup" [ngValue]="b">{{b}}</option>
+                            </select>
+                            <div class="text-danger" *ngIf="bloodgroup.invalid && bloodgroup.errors.required && bloodgroup.touched">BloodGroup is required</div>
+                        
+                    </div>   
+                    <div class="row ml-5 mr-5 mb-5 mt-5">            
+                          
+                                <label for="contactNo">Contact Number</label> 
+                                <input type="number" class="form-control" placeholder="Enter Contact Number" formControlName="contactNo" id="contactNo" pattern="^[6789]\d{9}$">
+                                <div class="text-danger" *ngIf="contactNo.invalid && contactNo.errors.required && contactNo.touched">Contact Number is required</div>
+                                <div class="text-light" *ngIf="contactNo.errors?.pattern">* Contact number should start
+                                    with digits 6,7,8,9 and should be of 10 characters</div>
+                    </div>
+                   
+                        <div class="row ml-5 mr-5 mb-5 mt-5">
+                            
+                                    <label for="state">State</label> 
+                                    <select class="form-control" id="state" formControlName="state" (blur)="selectState($event)" (change)="selectState($event)" name="state">
+                                        <option hidden></option>
+                                        <option value="">Choose your State</option>
+                                <option *ngFor="let st of State" [ngValue]="st">{{st}}</option>
+                                    </select>
+                                    <div class="text-danger" *ngIf="state.invalid && state.errors.required && state.touched">State is required</div>
+                               
+                        </div>   
+                        <div class="row ml-5 mr-5 mb-5 mt-5">
+                               
+                                    <label for="area">Area</label> 
+                                    <select class="form-control" placeholder="Choose area" id="area" formControlName="area" (blur)="selectArea($event)" (change)="selectArea($event)" name="area">
+                                    <option hidden></option>
+                                    <option value="">Choose your Area</option>
+                                    <option *ngFor="let ar of Area" [ngValue]="ar">{{ar}}</option>
+                                    </select>
+                                    <div class="text-danger" *ngIf="area.invalid && area.errors.required && area.touched">Area is required</div>
+                                
+                        </div>  
+                        
+                        <div class="row ml-5 mr-5 mb-5 mt-5">            
+                          
+                                <label for="pincode">Pincode</label> 
+                                <input type="text" class="form-control" placeholder={{Pincode}} formControlName="pincode" id="pincode" pattern="^[0-9]\d{5}$">
+                                <div class="text-danger" *ngIf="pincode.invalid && pincode.errors.required && pincode.touched">Pincode is required</div>
+                                <div class="text-light" *ngIf="pincode.errors?.pattern">* Pincode should be a number in
+                                    6  characters</div>    
+                                   
+                    </div>
+                    <div class="row mt-5 ml-5 mr-5 mb-5 mb-5 mt-5">
+                        <div class="col-12">
+                                <button type="submit" class="btn signup-button" [disabled]="!Blooddonationform.valid">Submit</button>
+                           
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+</div>
+    
+
+</body>

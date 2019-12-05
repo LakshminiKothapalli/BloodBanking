@@ -1,0 +1,114 @@
+
+
+   .nav-bottom {
+	left: 0;
+	bottom: 0;
+    width: 100%;
+    right: 0;
+	background-color:red(226, 6, 6, 0.767);
+    color: black;
+    position: fixed;
+}
+.nav-header {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:red(238, 56, 56, 0.767) ;
+    color: black;
+    position:top;
+}
+.nav-header-1 {
+    left: 0;
+    bottom: 0;
+    right:0;
+    width: 100%;
+    background-color:black;
+    color: white;
+    text-align: center;
+    
+}
+
+.image-size {
+    height:50px;
+    width:50px;
+}
+
+.image-size-1 {
+    height:400px;
+    width:500px;
+}
+
+.image-size-2
+{
+    height:450px;
+    width:1850px;
+}
+
+.text-color {
+    color:red;
+}
+
+.text-size {
+    font-size: 20px;
+}
+
+.ul-align {
+    text-align:center;
+}
+.text-style {
+   
+   font-size:25px;
+   color:red(179, 18, 18, 0.767);
+   font-family: Copperplate, "Copperplate Gothic Light", serif; 
+}
+.text-style-1 {
+    font-style: oblique;
+    font-size:18px;
+    color:red(179, 18, 18, 0.767);
+ }
+
+ .back-image {
+    background-image:
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRyCw19GBh2lkDrT_cI3rcYY40ojIr1RYX7_WTyguUbfFCQM0ht");
+    height: 100%;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+ }
+
+ .center-align {
+     text-align: center;
+ }
+ 
+ .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .bottom-right {
+    position: absolute;
+    bottom: 40px;
+    right: 16px;
+  }
+  
+  
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  div.scroll { 
+    margin:2px, 2px; 
+    padding:2px; 
+    background-color: maroon;
+    width: 500px; 
+    height: 450px; 
+    overflow-x: hidden; 
+    overflow-x: auto; 
+    text-align:justify; 
+} 
+  
+
